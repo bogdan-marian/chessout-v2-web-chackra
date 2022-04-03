@@ -34,7 +34,7 @@ async function getTournamentInfoList(): Promise<string[]> {
     await NetworkConfig.getDefault().sync(provider);
 
     let stringAddress =
-      "erd1qqqqqqqqqqqqqpgq4mhvpxl9w49z63ppuwfr74nwvudd0zdtd8ssnfgknq";
+      "erd1qqqqqqqqqqqqqpgqgufwtgw9ax4hvt6g956rxg7nw3u349ucd8sskgy2sm";
     let address = new Address(stringAddress);
 
     const abiLocation = `${process.env.PUBLIC_URL}/my-contract.abi.json`;
@@ -51,8 +51,7 @@ async function getTournamentInfoList(): Promise<string[]> {
 
     let interaction: Interaction = contract.methods.getTournamentInfoList([
       BytesValue.fromUTF8("tournament-01"),
-      BytesValue.fromUTF8("tournament-02"),
-      BytesValue.fromUTF8("tournament-06"),
+      BytesValue.fromUTF8("tournament-02")
     ]);
 
     let queryResponse = await contract.runQuery(
@@ -127,12 +126,12 @@ export default function MyContract() {
       value: "0",
       data: [
         "createTournament",
-        Buffer.from("tournament-08").toString("hex"),
+        Buffer.from("tournament-03").toString("hex"),
         Buffer.from("EGLD").toString("hex"),
         new BigUIntValue(Balance.egld(11).valueOf()),
       ].join("@"),
       receiver:
-        "erd1qqqqqqqqqqqqqpgq4mhvpxl9w49z63ppuwfr74nwvudd0zdtd8ssnfgknq",
+        "erd1qqqqqqqqqqqqqpgqgufwtgw9ax4hvt6g956rxg7nw3u349ucd8sskgy2sm",
       gasLimit: 10_000_000,
     };
 
