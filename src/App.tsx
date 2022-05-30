@@ -37,6 +37,7 @@ export function App() {
                 <Link to="/expenses">Expenses</Link> 
                 <Link to="/wallet">Wallet</Link> 
                 <Link to="/myContract">MyContract</Link>
+                <Link to="/xLauncher">XLauncher</Link>
               </HStack>
             </VStack>
             <Outlet />

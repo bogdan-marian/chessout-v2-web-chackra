@@ -12,6 +12,7 @@ import Invoice from "./routes/invoice";
 import PleaseSelectAnElement from "./routes/pleaseSelectAnElement";
 import MyWallet from "./routes/myWallet";
 import MyContract from "./routes/myContract";
+import XLauncher from "./routes/xLauncher";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -26,6 +27,7 @@ ReactDOM.render(
           </Route>
           <Route path="wallet" element={<MyWallet />} />
           <Route path="myContract" element={<MyContract />} />
+          <Route path="xLauncher" element={<XLauncher/>}/>
           <Route path="*" element={<NotThePageYouAreLookingFore />} />
         </Route>
       </Routes>
