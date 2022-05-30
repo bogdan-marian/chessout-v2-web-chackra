@@ -25,7 +25,7 @@ import * as React from "react";
 
 async function getTournamentInfoList(): Promise<string[]> {
   try {
-    console.log("Hello console")
+    console.log("Hello console");
     let provider = new ProxyProvider("https://devnet-gateway.elrond.com");
     await NetworkConfig.getDefault().sync(provider);
 
@@ -62,6 +62,10 @@ async function getTournamentInfoList(): Promise<string[]> {
 
     console.log("response from contract = ", response);
     console.log("queryResponse: " + JSON.stringify(myObject, null, 2));
+    let totalAmountBigNumber = myObject.total_amount;
+    let totalAmountHumanFormat = totalAmountBigNumber.toFixed();
+    console.log("totalAmountBigNumber", totalAmountBigNumber);
+    console.log("totalAmountHumanFormat", totalAmountHumanFormat);
     return ["End of getTournamentInfo"];
   } catch (error) {
     console.log(error);
