@@ -61,6 +61,7 @@ async function getTournamentInfoList(): Promise<string[]> {
     let myObject = response.firstValue.valueOf();
 
     console.log("response from contract = ", response);
+    console.log("queryResponse: " + JSON.stringify(myObject, null, 2));
     return ["End of getTournamentInfo"];
   } catch (error) {
     console.log(error);
